@@ -1,0 +1,37 @@
+# Validation of the piecewise (--seglo/--seghi) mode of fast_search5.
+# Each check echoes its command line, then that run's stdout (CR stripped).
+# Compiler: g++.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r2) 16.1.0
+# Machine: 12 threads, seg = 2^21 = 2097152 (the engine default).
+
+## A. whole N=1e8, v3's filter set, freshly built binary
+$ ./bin/fast_search5.exe --N 100000000 --no-mod3
+N=100000000 divisor_steps=3903016895 partners=618449512 max_partners_per_C=1855 candidates=13346674090 tested=2277219380 solutions=0 sieve_overflow=0
+$ grep '^N=' results/run_v3_N1e8.txt        # archive: v3, earlier build
+   N=100000000 divisor_steps=11885034948 partners=618449512 max_partners_per_C=1855 candidates=13346674090 tested=2277219380 solutions=0
+   CHECK A: partners / max_partners_per_C / candidates / tested / solutions
+            identical to the v3 archive (divisor_steps is smaller: 3903016895
+            vs 11885034948, v5's stronger v <= 3N prune, REPORT.md 2.1)
+
+## B. the same bound cut into three pieces: nseg = ceil(1e8/2^21) = 48
+$ ./bin/fast_search5.exe --N 100000000 --no-mod3 --seglo 0 --seghi 16
+N=100000000 divisor_steps=1427041781 partners=312055623 max_partners_per_C=1855 candidates=10447249636 tested=1802712456 solutions=0 sieve_overflow=0
+$ ./bin/fast_search5.exe --N 100000000 --no-mod3 --seglo 16 --seghi 32
+N=100000000 divisor_steps=1289287587 partners=181728831 max_partners_per_C=1578 candidates=2423619446 tested=397837640 solutions=0 sieve_overflow=0
+$ ./bin/fast_search5.exe --N 100000000 --no-mod3 --seglo 32 --seghi 48
+N=100000000 divisor_steps=1186687527 partners=124665058 max_partners_per_C=1290 candidates=475805008 tested=76669284 solutions=0 sieve_overflow=0
+
+## B'. the three pieces summed field by field must reproduce the whole run A
+   pieces counted: 3 of 3
+   sum   : N=100000000 divisor_steps=3903016895 partners=618449512 max_partners_per_C=1855 candidates=13346674090 tested=2277219380 solutions=0 sieve_overflow=0
+   whole : N=100000000 divisor_steps=3903016895 partners=618449512 max_partners_per_C=1855 candidates=13346674090 tested=2277219380 solutions=0 sieve_overflow=0
+   CHECK B: the pieces reproduce the whole run exactly (diff is empty)
+
+## C. whole N=1e9, v3's filter set, freshly built binary
+$ ./bin/fast_search5.exe --N 1000000000 --no-mod3
+N=1000000000 divisor_steps=44199282253 partners=7006992014 max_partners_per_C=3954 candidates=216549264214 tested=35765193862 solutions=0 sieve_overflow=0
+$ grep '^N=' results/run_N1e9.txt           # archive: v3, earlier build
+   N=1000000000 divisor_steps=148039211084 partners=7006992014 max_partners_per_C=3954 candidates=216549264214 tested=35765193862 solutions=0
+   CHECK C: partners / max_partners_per_C / candidates / tested / solutions
+            identical to the v3 archive
+
+## summary: 0 failing check(s); raw files in results/.verify/

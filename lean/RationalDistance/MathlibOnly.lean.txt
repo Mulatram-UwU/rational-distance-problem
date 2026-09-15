@@ -1,0 +1,124 @@
+TACTICS AND FEATURES THAT ARE *NOT* AVAILABLE WITH CORE LEAN ONLY (no Mathlib)
+================================================================================
+Environment: Lean 4.34.0-rc2, x86_64-w64-windows-gnu, default prelude (Init),
+no external packages.  Captured 2026-09-14.
+
+This file has extension `.txt` (not `.lean`) on purpose: Lake only compiles
+`*.lean`, so these deliberately-failing snippets do NOT break `lake build`.
+
+Method: each snippet was written to its own file and compiled with
+  <toolchain>/bin/lean.exe <file>.lean
+Exit code and stderr recorded below.
+
+
+--- 1. `norm_num`  ==> NOT AVAILABLE -------------------------------------------
+File: example : (3 : Nat) ^ 2 = 9 := by norm_num
+Exit: 1
+Stderr:
+  unknown tactic
+  unsolved goals
+  ⊢ 3 ^ 2 = 9
+
+
+--- 2. `ring`  ==> NOT AVAILABLE ----------------------------------------------
+File: example (a b : Nat) : (a + b) ^ 2 = a ^ 2 + 2 * a * b + b ^ 2 := by ring
+Exit: 1
+Stderr:
+  unknown tactic
+  unsolved goals
+  a b : Nat
+  ⊢ (a + b) ^ 2 = a ^ 2 + 2 * a * b + b ^ 2
+
+
+--- 3. `linarith`  ==> NOT AVAILABLE ------------------------------------------
+File: example (a b : Nat) (h : a < b) : a + 1 ≤ b := by linarith
+Exit: 1
+Stderr:
+  unknown tactic
+  unsolved goals
+  a b : Nat
+  h : a < b
+  ⊢ a + 1 ≤ b
+
+
+--- 4. `nlinarith`  ==> NOT AVAILABLE -----------------------------------------
+   error: unknown tactic
+
+
+--- 5. `positivity`  ==> NOT AVAILABLE ----------------------------------------
+   error: unknown tactic
+
+
+--- 6. `push_neg`  ==> NOT AVAILABLE ------------------------------------------
+   error: unknown tactic
+
+
+--- 7. `by_contra`  ==> NOT AVAILABLE -----------------------------------------
+   error: unknown tactic
+   (NOTE: `by_cases` IS available; only `by_contra` is missing.)
+
+
+--- 8. `contrapose`  ==> NOT AVAILABLE ----------------------------------------
+   error: unknown tactic
+
+
+--- 9. `tauto`  ==> NOT AVAILABLE ---------------------------------------------
+   error: unknown tactic
+
+
+--- 10. `aesop`  ==> NOT AVAILABLE (it's a separate package, not in core) ------
+   error: unknown tactic
+
+
+--- 11. `abel`  ==> NOT AVAILABLE ---------------------------------------------
+   error: unknown tactic
+
+
+--- 12. `group`  ==> NOT AVAILABLE --------------------------------------------
+   error: unknown tactic
+
+
+--- 13. `field_simp`  ==> NOT AVAILABLE ---------------------------------------
+   error: unknown tactic
+
+
+--- 14. `ring_nf`  ==> NOT AVAILABLE ------------------------------------------
+   error: unknown tactic
+
+
+--- 15. `simp_arith`  ==> EXISTS BUT DEPRECATED --------------------------------
+File: example (a : Nat) : a + 0 = a := by simp_arith
+Exit: 1
+Stderr:
+  `simp_arith` has been deprecated. It was a shorthand for `simp +arith +decide`,
+  but most of the time, `+decide` was redundant since simprocs have been implemented.
+  Try these:
+    [apply] simp +arith
+    [apply] simp +arith +decide
+  => USE `simp +arith` INSTEAD.
+
+
+--- Core substitution recipes ---------------------------------------------------
+Instead of `norm_num`      -> `decide` / `native_decide` / `simp +arith` / `norm_num1`? (no)
+Instead of `ring`          -> `simp [pow_two]` + `ring` NOT possible; hand-write
+                              the algebra or use `decide` for concrete numerals.
+Instead of `linarith`      -> `omega` (works for linear Nat/Int arithmetic!)
+Instead of `positivity`    -> `omega` for simple bounds, or prove manually.
+Instead of `push_neg`      -> reason manually / `by_cases`.
+Instead of `by_contra`     -> `by_contra` missing; use classical reasoning via
+                              `Classical.byContradiction` / `by_contra'`? not present.
+                              Use: `fun h => ...` with `not_not` lemmas manually.
+Instead of `aesop`         -> `simp_all`, `omega`, `tauto` (absent) -> manual.
+
+
+================================================================================
+UPDATE 2026-09-15: this list is now HISTORICAL.
+
+GitHub became reachable, and `mathlib4@master` uses exactly the same
+`lean-toolchain` (leanprover/lean4:v4.34.0-rc2) that is installed here.
+`lean-mathlib/` therefore builds Mathlib successfully (`lake update` +
+`lake exe cache get`), and `ring`, `nlinarith`, `linarith`, `positivity`,
+`field_simp`, `interval_cases`, `exact_mod_cast`, `IsSquare`, `Rat.num/den` ...
+are all available there.  Everything in this file describes only the
+*Mathlib-free* project `lean/`, which is still built that way and still
+compiles with exactly the tactics listed as available below.

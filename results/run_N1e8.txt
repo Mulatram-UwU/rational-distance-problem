@@ -1,0 +1,1 @@
+N=100000000 pairs=309224756 candidates=13346674090 parity_survivors=2277219380 tested=2277219380 solutions=0

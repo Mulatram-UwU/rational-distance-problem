@@ -1,0 +1,3 @@
+N=100000000 divisor_steps=1427041781 partners=312055623 max_partners_per_C=1855 candidates=10447249636 tested=1802712456 solutions=0 sieve_overflow=0
+N=100000000 divisor_steps=1289287587 partners=181728831 max_partners_per_C=1578 candidates=2423619446 tested=397837640 solutions=0 sieve_overflow=0
+N=100000000 divisor_steps=1186687527 partners=124665058 max_partners_per_C=1290 candidates=475805008 tested=76669284 solutions=0 sieve_overflow=0

@@ -1,0 +1,14 @@
+# Consistency matrix: v1 / v2 / v3 must agree exactly
+# (candidates, survivors/tested, solutions)
+fast_search_v1   N=10000     N=10000 pairs=14474 candidates=93740 parity_survivors=19909 tested=19909 solutions=0
+fast_search2     N=10000     N=10000 entries=28948 candidates=93740 survivors=19909 tested=19909 solutions=0
+fast_search3     N=10000     N=10000 divisor_steps=338220 partners=28948 max_partners_per_C=59 candidates=93740 tested=19909 solutions=0
+fast_search_v1   N=100000    N=100000 pairs=185864 candidates=2141875 parity_survivors=421893 tested=421893 solutions=0
+fast_search2     N=100000    N=100000 entries=371728 candidates=2141875 survivors=421893 tested=421893 solutions=0
+fast_search3     N=100000    N=100000 divisor_steps=5027731 partners=371728 max_partners_per_C=145 candidates=2141875 tested=421893 solutions=0
+fast_search_v1   N=1000000   N=1000000 pairs=2269788 candidates=42803454 parity_survivors=7954420 tested=7954420 solutions=0
+fast_search2     N=1000000   N=1000000 entries=4539576 candidates=42803454 survivors=7954420 tested=7954420 solutions=0
+fast_search3     N=1000000   N=1000000 divisor_steps=69955248 partners=4539576 max_partners_per_C=341 candidates=42803454 tested=7954420 solutions=0
+fast_search_v1   N=10000000  N=10000000 pairs=26809924 candidates=781367361 parity_survivors=138567430 tested=138567430 solutions=0
+fast_search2     N=10000000  N=10000000 entries=53619848 candidates=781367361 survivors=138567430 tested=138567430 solutions=0
+fast_search3     N=10000000  N=10000000 divisor_steps=928186388 partners=53619848 max_partners_per_C=825 candidates=781367361 tested=138567430 solutions=0

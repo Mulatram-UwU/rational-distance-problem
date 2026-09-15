@@ -1,0 +1,29 @@
+# ---- build output --------------------------------------------------------------
+bin/
+*.o
+*.obj
+*.exe
+*.out
+a.out
+
+# ---- intermediate data dumps (regenerable, see src/brute_pairs.cpp) -------------
+tmp/
+
+# ---- Lean build artefacts (large; `lake build` regenerates them) ---------------
+.lake/
+lean/.lake/
+lean-mathlib/.lake/
+lean-build.log
+
+# ---- third-party material kept on disk but not redistributable -----------------
+# downloaded papers / prior-art code; see _third_party/README.md
+_third_party/
+
+# ---- editors, OS, python ------------------------------------------------------
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

@@ -1,0 +1,4 @@
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [5995,7510) of 23842
+[prog] 1000/1515 segments (of segments [5995,7510))
+[search] 720.20s total 720.20s threads=12 mod3=on seg=2097152

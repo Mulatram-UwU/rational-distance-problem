@@ -1,0 +1,7 @@
+import RationalDistanceAlgo.Main
+#print axioms RationalDistanceAlgo.hasRatPoint_iff
+#print axioms RationalDistanceAlgo.nat_isSquare_of_rat_isSquare
+#print axioms RationalDistanceAlgo.midline_key
+#print axioms RationalDistanceAlgo.no_midline_of_fermat
+#print axioms RationalDistanceAlgo.no_rational_point_of_no_candidate
+#print axioms RationalDistanceAlgo.no_rational_point_of_no_candidate'

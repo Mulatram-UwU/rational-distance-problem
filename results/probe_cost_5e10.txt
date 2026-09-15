@@ -1,0 +1,30 @@
+== N=2e10, segments [0,50), --stats ==
+N=20000000000 divisor_steps=6894591912 partners=2396583325 max_partners_per_C=5952 candidates=258255121611 tested=0 solutions=0 sieve_overflow=0
+
+real	0m47.753s
+user	0m0.000s
+sys	0m0.062s
+
+== N=5e10, segments [0,50), --stats ==
+N=50000000000 divisor_steps=7265057364 partners=2646224908 max_partners_per_C=6430 candidates=311629062699 tested=0 solutions=0 sieve_overflow=0
+
+real	0m50.749s
+user	0m0.030s
+== N=5e10, segments [20000,20050), --stats   (far end, C ~ 4.2e10) ==
+N=50000000000 divisor_steps=5032285609 partners=521010750 max_partners_per_C=4747 candidates=4115517356 tested=0 solutions=0 sieve_overflow=0
+
+real	0m25.253s
+user	0m0.031s
+sys	0m0.046s
+== N=5e10, segments [20000,20010), full mode  (far end) ==
+N=50000000000 divisor_steps=1006558983 partners=104255361 max_partners_per_C=4572 candidates=828267363 tested=65382076 solutions=0 sieve_overflow=0
+
+real	0m7.691s
+user	0m0.031s
+sys	0m0.046s
+== N=5e10, segments [0,10), full mode  (near end, C ~ 1e7) ==
+N=50000000000 divisor_steps=1387905375 partners=543536530 max_partners_per_C=4023 candidates=53070968322 tested=5054155969 solutions=0 sieve_overflow=0
+
+real	0m34.098s
+user	0m0.000s
+sys	0m0.046s

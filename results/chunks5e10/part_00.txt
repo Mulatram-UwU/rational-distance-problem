@@ -1,0 +1,1 @@
+N=50000000000 divisor_steps=532513943930 partners=131234049436 max_partners_per_C=14317 candidates=13132668521840 tested=1094855716543 solutions=0 sieve_overflow=0

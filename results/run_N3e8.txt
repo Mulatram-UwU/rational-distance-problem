@@ -1,0 +1,8 @@
+[build] N=300000000 entries=1973076898 232.01s
+N=300000000 entries=1973076898 candidates=50729090130 survivors=8516493714 tested=8516493714 solutions=0
+[search] 128.62s total 360.63s threads=12 parity=on mod3=off three=off
+
+real	6m2.562s
+user	0m0.031s
+sys	0m0.046s
+EXIT=0

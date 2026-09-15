@@ -1,0 +1,9 @@
+# Keep the working tree LF everywhere: the shell scripts and the Lean sources are
+# line-sensitive, and a CRLF checkout breaks `bash run_all.sh` on Windows.
+* text=auto eol=lf
+
+# Binary (only if any ever shows up; nothing here is tracked binary today).
+*.exe binary
+*.o   binary
+*.png binary
+*.pdf binary

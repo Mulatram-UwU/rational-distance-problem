@@ -1,0 +1,61 @@
+=== Lean 4 verification log (2026-09-15) ===
+paths redacted to <repo>/<elan> for publication; no measurement or command in this log was altered
+
+toolchain: <elan>/toolchains/leanprover--lean4---v4.34.0-rc2 (Lean 4.34.0-rc2)
+Mathlib:   mathlib4@master, same lean-toolchain, oleans from 'lake exe cache get'
+
+--- core Lean project (<repo>/lean), no Mathlib ---
+$ lake.exe build
+Build completed successfully (6 jobs).
+
+$ lake.exe env lean CheckAxioms.lean
+'RationalDistance.Algorithm.pyth_iff_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RationalDistance.Algorithm.candidate_sound' depends on axioms: [propext, Quot.sound]
+'RationalDistance.Algorithm.exists_enum_of_sol' depends on axioms: [propext, Quot.sound]
+'RationalDistance.Algorithm.parity_normal_form' depends on axioms: [propext, Quot.sound]
+'RationalDistance.Algorithm.no_sol_of_no_candidate' depends on axioms: [propext, Quot.sound]
+
+--- Mathlib project (<repo>/lean-mathlib) ---
+$ lake.exe build RationalDistanceAlgo.Main
+Build completed successfully (8928 jobs).
+
+$ lake.exe env lean CheckAxioms.lean
+'RationalDistanceAlgo.hasRatPoint_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RationalDistanceAlgo.nat_isSquare_of_rat_isSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RationalDistanceAlgo.midline_key' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RationalDistanceAlgo.no_midline_of_fermat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RationalDistanceAlgo.no_rational_point_of_no_candidate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RationalDistanceAlgo.no_rational_point_of_no_candidate'' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- 2026-09-15, after the §0/§8.2 correction of the (wrong) "A = B coverage gap" claim
+    in the header comment of lean/RationalDistance/Algorithm.lean (comment only,
+    no statement or proof changed) ---
+$ cd lean && lake.exe build RationalDistance.Algorithm
+✔ [5/5] Built RationalDistance.Algorithm (6.0s)
+Build completed successfully (5 jobs).
+$ lake.exe build            # whole core project
+Build completed successfully (6 jobs).
+$ lake.exe env lean CheckAxioms.lean
+'RationalDistance.Algorithm.pyth_iff_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RationalDistance.Algorithm.candidate_sound' depends on axioms: [propext, Quot.sound]
+'RationalDistance.Algorithm.exists_enum_of_sol' depends on axioms: [propext, Quot.sound]
+'RationalDistance.Algorithm.parity_normal_form' depends on axioms: [propext, Quot.sound]
+'RationalDistance.Algorithm.no_sol_of_no_candidate' depends on axioms: [propext, Quot.sound]
+
+$ cd lean-mathlib && lake.exe build RationalDistanceAlgo.Main
+✔ [8926/8928] Built RationalDistanceAlgo.Midline (457s)
+✔ [8927/8928] Built RationalDistanceAlgo.Bridge (459s)
+✔ [8928/8928] Built RationalDistanceAlgo.Main (327s)
+Build completed successfully (8928 jobs).
+
+=== re-checked 2026-09-15 12:22, after the release cleanup ===
+The only source changes since the run above were comment-only: the header
+comments of lean/RationalDistance/Parity.lean, TwelveDvd.lean and
+lean/BigCheck500.lean were made machine-independent (they used to spell out
+one absolute toolchain path).  No statement and no proof was touched.
+
+$ cd lean && lake build            # -> results/run_all_quick.txt (tail)
+Build completed successfully (6 jobs).
+
+$ cd lean-mathlib && lake build RationalDistanceAlgo.Main
+Build completed successfully (8928 jobs).

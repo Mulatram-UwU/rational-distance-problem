@@ -1,0 +1,133 @@
+### COMPILE COMMANDS ###
+g++ -O2 -march=native -fopenmp -std=c++17 -o bin/brute.exe src/brute.cpp
+g++ -O2 -march=native -std=c++17 -o bin/brute_pairs.exe src/brute_pairs.cpp
+
+$ ./bin/brute.exe 500
+=== brute.cpp  N=500  mode=strict interior ===
+candidates tested : 41541750
+solutions found   : 0
+threads           : 12
+elapsed wall time : 0.259 s
+
+$ ./bin/brute.exe 500 --symmetric
+=== brute.cpp  N=500  mode=symmetric (boundary allowed) ===
+candidates tested : 42042750
+solutions found   : 0
+threads           : 12
+elapsed wall time : 0.337 s
+
+$ ./bin/brute.exe 1000
+=== brute.cpp  N=1000  mode=strict interior ===
+candidates tested : 332833500
+solutions found   : 0
+threads           : 12
+elapsed wall time : 0.624 s
+
+$ ./bin/brute.exe 1000 --symmetric
+=== brute.cpp  N=1000  mode=symmetric (boundary allowed) ===
+candidates tested : 334835500
+solutions found   : 0
+threads           : 12
+elapsed wall time : 0.639 s
+
+$ ./bin/brute.exe 2000
+=== brute.cpp  N=2000  mode=strict interior ===
+candidates tested : 2664667000
+solutions found   : 0
+threads           : 12
+elapsed wall time : 2.987 s
+
+$ ./bin/brute.exe 2000 --symmetric
+=== brute.cpp  N=2000  mode=symmetric (boundary allowed) ===
+candidates tested : 2672671000
+solutions found   : 0
+threads           : 12
+elapsed wall time : 2.992 s
+
+$ ./bin/brute.exe 3000
+=== brute.cpp  N=3000  mode=strict interior ===
+candidates tested : 8995500500
+solutions found   : 0
+threads           : 12
+elapsed wall time : 9.513 s
+
+$ ./bin/brute.exe 3000 --symmetric
+=== brute.cpp  N=3000  mode=symmetric (boundary allowed) ===
+candidates tested : 9013506500
+solutions found   : 0
+threads           : 12
+elapsed wall time : 9.707 s
+
+$ ./bin/brute.exe 5000
+=== brute.cpp  N=5000  mode=strict interior ===
+candidates tested : 41654167500
+solutions found   : 0
+threads           : 12
+elapsed wall time : 44.034 s
+
+$ ./bin/brute.exe 5000 --symmetric
+=== brute.cpp  N=5000  mode=symmetric (boundary allowed) ===
+candidates tested : 41704177500
+solutions found   : 0
+threads           : 12
+elapsed wall time : 43.831 s
+
+$ ./bin/brute.exe 10000
+
+=== brute.cpp  N=10000  mode=strict interior ===
+candidates tested : 333283335000
+solutions found   : 0
+threads           : 12
+elapsed wall time : 335.786 s
+
+
+### NOTE ON TIMINGS ###
+The runs above were taken while another process (fast_search3.exe, owned by a
+different workload in this same repo) was keeping all 12 cores busy, which
+inflates wall times by roughly 2.4x.  Repeated measurement matrix taken under
+that same load (3 consecutive runs each, seconds):
+  N=500   0.339  0.274  0.282
+  N=1000  0.605  0.623  0.522
+  N=2000  3.123  2.997  3.119
+  N=3000  9.747  9.463  9.280
+When the competing work paused, the same runs took 0.023 / 0.155 / 1.262 / 3.928 s
+(N=5000: 22.699 s, N=10000: 235.905 s).  Candidate counts and solution counts are
+load-independent.  All candidate counts equal sum_{Q=1..N} (Q-1)^2 (interior) and
+sum_{Q=1..N} (Q+1)^2 (--symmetric), e.g. N=3000: 8,995,500,500 and 9,013,506,500.
+
+### brute_pairs RUNS ###
+$ ./bin/brute_pairs.exe N --out FILE            (divisor/factorisation mode)
+$ ./bin/brute_pairs.exe N --out FILE --via-triples   (classical m,n,k mode)
+
+$ ./bin/brute_pairs.exe 200000 --out results/pairs_N200000.txt
+brute_pairs N=200000 mode=divisor/factorisation
+pairs written      : 792962
+output file        : results/pairs_N200000.txt
+self-check failures: 0
+enumerate time     : 0.258 s
+sort/dedup time    : 0.057 s
+elapsed wall time  : 0.315 s
+
+$ ./bin/brute_pairs.exe 20000 --out tmp/A20000.txt
+brute_pairs N=20000 mode=divisor/factorisation
+pairs written      : 62854
+output file        : tmp/A20000.txt
+self-check failures: 0
+enumerate time     : 0.012 s
+sort/dedup time    : 0.003 s
+elapsed wall time  : 0.015 s
+
+$ ./bin/brute_pairs.exe 20000 --out tmp/B20000.txt --via-triples
+brute_pairs N=20000 mode=via-triples (classical m,n,k)
+pairs written      : 62854
+output file        : tmp/B20000.txt
+self-check failures: 0
+enumerate time     : 0.001 s
+sort/dedup time    : 0.007 s
+elapsed wall time  : 0.008 s
+
+$ cd tmp && md5sum A20000.txt B20000.txt && cmp A20000.txt B20000.txt && echo BYTE-IDENTICAL
+d05b86974bef5db77f43613964585303 *A20000.txt
+d05b86974bef5db77f43613964585303 *B20000.txt
+BYTE-IDENTICAL
+

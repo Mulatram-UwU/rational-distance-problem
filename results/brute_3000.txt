@@ -1,0 +1,5 @@
+=== brute.cpp  N=3000  mode=strict interior ===
+candidates tested : 8995500500
+solutions found   : 0
+threads           : 12
+elapsed wall time : 3.937 s

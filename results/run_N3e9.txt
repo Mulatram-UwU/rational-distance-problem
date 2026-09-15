@@ -1,0 +1,8 @@
+[sieve] N=3000000000 53.19s
+N=3000000000 divisor_steps=489228649307 partners=22198268430 max_partners_per_C=5842 candidates=806162420921 tested=131322339150 solutions=0
+[search] 1486.78s total 1539.97s threads=12 parity=on mod3=off
+
+real	25m40.527s
+user	0m0.016s
+sys	0m0.030s
+EXIT=0

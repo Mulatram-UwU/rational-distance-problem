@@ -1,0 +1,5 @@
+v3 archive at 3e9: partners=22198268430 max=5842 candidates=806162420921 tested=131322339150 solutions=0
+[setup] N=3000000000 primes<=54774: 5572 seg=2097152 0.00s
+[prog] 1000/1431 segments
+N=3000000000 divisor_steps=139999393152 partners=22198268430 max_partners_per_C=5842 candidates=806162420921 tested=131322339150 solutions=0 sieve_overflow=0
+[search] 1469.28s total 1469.28s threads=12 mod3=off seg=2097152

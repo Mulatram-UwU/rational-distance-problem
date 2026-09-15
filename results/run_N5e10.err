@@ -1,0 +1,110 @@
+# stderr of the piecewise Q <= 50000000000 run (see run_5e10.sh).
+# Each piece below is one invocation of
+#   bin/fast_search5 --N 50000000000 --seglo <lo> --seghi <hi>
+# over segments [lo,hi) of 2097152 residues each; the raw per-piece
+# stdout is results/chunks5e10/part_<k>.txt.
+# --- piece 00: segments [0,4079)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [0,4079) of 23842
+[prog] 1000/4079 segments (of segments [0,4079))
+[prog] 2000/4079 segments (of segments [0,4079))
+[prog] 3000/4079 segments (of segments [0,4079))
+[prog] 4000/4079 segments (of segments [0,4079))
+[search] 3929.94s total 3929.94s threads=12 mod3=on seg=2097152
+# --- piece 01: segments [4079,5995)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [4079,5995) of 23842
+[prog] 1000/1916 segments (of segments [4079,5995))
+[search] 1020.30s total 1020.30s threads=12 mod3=on seg=2097152
+# --- piece 02: segments [5995,7510)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [5995,7510) of 23842
+[prog] 1000/1515 segments (of segments [5995,7510))
+[search] 720.20s total 720.20s threads=12 mod3=on seg=2097152
+# --- piece 03: segments [7510,8811)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [7510,8811) of 23842
+[prog] 1000/1301 segments (of segments [7510,8811))
+[search] 559.23s total 559.23s threads=12 mod3=on seg=2097152
+# --- piece 04: segments [8811,9974)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [8811,9974) of 23842
+[prog] 1000/1163 segments (of segments [8811,9974))
+[search] 445.43s total 445.43s threads=12 mod3=on seg=2097152
+# --- piece 05: segments [9974,11037)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [9974,11037) of 23842
+[prog] 1000/1063 segments (of segments [9974,11037))
+[search] 388.42s total 388.42s threads=12 mod3=on seg=2097152
+# --- piece 06: segments [11037,12024)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [11037,12024) of 23842
+[search] 334.21s total 334.21s threads=12 mod3=on seg=2097152
+# --- piece 07: segments [12024,12950)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [12024,12950) of 23842
+[search] 290.17s total 290.17s threads=12 mod3=on seg=2097152
+# --- piece 08: segments [12950,13826)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [12950,13826) of 23842
+[search] 264.50s total 264.51s threads=12 mod3=on seg=2097152
+# --- piece 09: segments [13826,14659)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [13826,14659) of 23842
+[search] 241.89s total 241.89s threads=12 mod3=on seg=2097152
+# --- piece 10: segments [14659,15456)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [14659,15456) of 23842
+[search] 221.14s total 221.14s threads=12 mod3=on seg=2097152
+# --- piece 11: segments [15456,16222)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [15456,16222) of 23842
+[search] 206.70s total 206.70s threads=12 mod3=on seg=2097152
+# --- piece 12: segments [16222,16960)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [16222,16960) of 23842
+[search] 191.16s total 191.16s threads=12 mod3=on seg=2097152
+# --- piece 13: segments [16960,17672)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [16960,17672) of 23842
+[search] 178.83s total 178.84s threads=12 mod3=on seg=2097152
+# --- piece 14: segments [17672,18363)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [17672,18363) of 23842
+[search] 167.16s total 167.16s threads=12 mod3=on seg=2097152
+# --- piece 15: segments [18363,19033)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [18363,19033) of 23842
+[search] 157.76s total 157.76s threads=12 mod3=on seg=2097152
+# --- piece 16: segments [19033,19685)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [19033,19685) of 23842
+[search] 155.78s total 155.78s threads=12 mod3=on seg=2097152
+# --- piece 17: segments [19685,20320)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [19685,20320) of 23842
+[search] 146.08s total 146.08s threads=12 mod3=on seg=2097152
+# --- piece 18: segments [20320,20940)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [20320,20940) of 23842
+[search] 138.29s total 138.29s threads=12 mod3=on seg=2097152
+# --- piece 19: segments [20940,21545)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [20940,21545) of 23842
+[search] 131.79s total 131.79s threads=12 mod3=on seg=2097152
+# --- piece 20: segments [21545,22137)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [21545,22137) of 23842
+[search] 125.19s total 125.20s threads=12 mod3=on seg=2097152
+# --- piece 21: segments [22137,22717)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [22137,22717) of 23842
+[search] 122.12s total 122.12s threads=12 mod3=on seg=2097152
+# --- piece 22: segments [22717,23285)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [22717,23285) of 23842
+[search] 119.15s total 119.15s threads=12 mod3=on seg=2097152
+# --- piece 23: segments [23285,23842)
+[setup] N=50000000000 primes<=223608: 19910 seg=2097152 0.00s
+[range] segments [23285,23842) of 23842
+[search] 110.91s total 110.91s threads=12 mod3=on seg=2097152

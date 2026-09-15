@@ -1,0 +1,6 @@
+name = "RationalDistance"
+version = "0.1.0"
+defaultTargets = ["RationalDistance"]
+
+[[lean_lib]]
+name = "RationalDistance"

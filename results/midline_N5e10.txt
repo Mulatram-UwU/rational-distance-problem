@@ -1,0 +1,2 @@
+[midline] 80.87s
+N=50000000000 Amax=25000000000 primitive_triples=3656771176 isqrt_tests=3656771176 midline_solutions=0

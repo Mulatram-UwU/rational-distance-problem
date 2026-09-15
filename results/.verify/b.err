@@ -1,0 +1,9 @@
+[setup] N=100000000 primes<=10002: 1229 seg=2097152 0.00s
+[range] segments [0,16) of 48
+[search] 7.88s total 7.88s threads=12 mod3=off seg=2097152
+[setup] N=100000000 primes<=10002: 1229 seg=2097152 0.00s
+[range] segments [16,32) of 48
+[search] 5.43s total 5.43s threads=12 mod3=off seg=2097152
+[setup] N=100000000 primes<=10002: 1229 seg=2097152 0.00s
+[range] segments [32,48) of 48
+[search] 4.12s total 4.12s threads=12 mod3=off seg=2097152

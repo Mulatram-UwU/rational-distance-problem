@@ -1,0 +1,12 @@
+== (1) algebraic identities, exact rational arithmetic ==
+identity Delta(lam) = lam^2 (v^2+8v+20) holds on all samples: True
+a quartic point yields (*): True (no random lambda happened to be a point)
+== (1b) same equivalence checked over finite fields (exact, many instances) ==
+finite-field instances checked: 12712, failures: 0
+   (each instance: Delta(lam) a square mod p => 1+u^2 and 1+(2-u)^2 are squares mod p)
+== (2) rational points of nu^2 = DELTA(lam), lam = p/q, |p|,q <= 1500 ==
+rational points found (lam = p/q, nu = r/q^2): 0
+NOTE: lam and -1/lam give the same point (the quartic has that symmetry),
+      and no point is expected to satisfy the range conditions 0<u<2.
+== (3) direct search of (*): 1+u^2 and 1+(2-u)^2 squares, u = p/q <= 1500 ==
+centre-line solutions 0 < u < 1 found: 0

@@ -1,0 +1,2 @@
+N=3000000000  unordered Pythagorean pairs (u<v, both <= N) = 11099134215
+N=3000000000  v3 'partners' must equal 2*pairs = 22198268430

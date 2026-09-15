@@ -1,0 +1,22 @@
+PASS  engines: v4 (both filter sets) and v5 reproduce v3 at N = 1e4..1e7   [12/12 counter tuples identical]
+PASS  counters: candcheck (from the definitions) == fast_search5 at N = 1000/2000/3000   [1000:('2068', '3295', '774', '0') 2000:('4642', '9293', '2111', '0') 3000:('7388', '16868', '3774', '0')]
+PASS  partners: partners_ref (from the definition) == fast_search5 at N = 10000   [all=28948 skip2mod4=25335 max=59]
+PASS  sieve: the segmented residual sieve == trial division for every C <= 2e6
+PASS  1e8 runs: 0 solutions, and the counters quoted in results/summary.md
+PASS  2e10: partners == 2 * (the triple-parametrisation pair count)   [2 * 80770876328 = 161541752656]
+PASS  1e9: partners == 2 * (the triple-parametrisation pair count)   [2 * 3503496007 = 7006992014]
+PASS  v5 reproduces the archived v3 run at 3e9 bit for bit   [partners=22198268430 candidates=806162420921 tested=131322339150]
+PASS  midline: the brute-force count == the enumerator's own count at Amax = 50000   [ref=7312 enum=7312]
+PASS  midline 2e10: Amax = N/2, 0 solutions, count quoted in REPORT.md
+PASS  chunking: the piecewise validation of --seglo/--seghi reports no failure   [results/verify_chunking.txt]
+PASS  5e10: the pieces sum to the recorded line, field by field   [24 pieces, partners=420219661420]
+PASS  5e10: 0 solutions, no sieve overflow
+PASS  5e10: partners == 2 * (the triple-parametrisation pair count)   [2 * 210109830710 = 420219661420 = partners]
+PASS  5e10 midline: Amax = N/2, 0 solutions   [results/midline_N5e10.txt]
+PASS  T(C): every non-empty entry of the v3 dump appears verbatim in the v4 dump   [124 shared, 0 mismatches; the 76 omitted ones are exactly v3's empty sets]
+PASS  REPORT.md quotes the 2e10 headline verbatim
+PASS  REPORT.md quotes the 2e10 timing verbatim, and the .err file has it
+PASS  both Lean projects build (transcript at the end of run_all_quick.txt)
+PASS  the run_all.sh quick log is complete
+
+FAILURES: NONE

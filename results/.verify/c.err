@@ -1,0 +1,2 @@
+[setup] N=1000000000 primes<=31624: 3401 seg=2097152 0.00s
+[search] 194.29s total 194.29s threads=12 mod3=off seg=2097152

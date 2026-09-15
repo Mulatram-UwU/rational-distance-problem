@@ -1,0 +1,11 @@
+L=200 sols=0 t=0s
+L=400 sols=0 t=1s
+L=600 sols=0 t=3s
+L=800 sols=0 t=5s
+L=1000 sols=0 t=9s
+L=1200 sols=0 t=13s
+L=1400 sols=0 t=19s
+L=1600 sols=0 t=25s
+L=1800 sols=0 t=33s
+L=2000 sols=0 t=43s
+DONE LMAX=2000 non-boundary solutions found: 0

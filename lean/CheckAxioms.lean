@@ -1,0 +1,7 @@
+import RationalDistance.Algorithm
+import RationalDistance.Count
+#print axioms RationalDistance.Algorithm.pyth_iff_div
+#print axioms RationalDistance.Algorithm.candidate_sound
+#print axioms RationalDistance.Algorithm.exists_enum_of_sol
+#print axioms RationalDistance.Algorithm.parity_normal_form
+#print axioms RationalDistance.Algorithm.no_sol_of_no_candidate
